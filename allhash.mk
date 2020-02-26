@@ -1,22 +1,15 @@
 #!/usr/bin/make -f
-$(info $(MAKEFILES))
 .ONESHELL:
 .PHONY: help test
 SHELL=bash
 MAGICSTRING=GTSG33DI3PSUI3MYYOGOSUPKZAFGPSGPPRGVUXWFACNVTFZRPNHVFFUIT6BDDF5QQ66TEE5C47MO
 LINESEPARATOR=----------$(MAGICSTRING)----------
 
-help:
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA:
+	# Calculate hash values of <FILE> and store them into <FILE>.allhash.
 	#
+	#         allhash <FILE>.allhash
 	#
-
-test: test.txt test.txt.allhash
-	@
-	cat test.txt.allhash
-
-test.txt:
-	@
-	echo test.txt >$@
 
 %.allhash: %
 	@
@@ -26,5 +19,5 @@ test.txt:
 	echo $< >>$@
 	stat $< >>$@
 	date --iso-8601=seconds -r$<  >>$@
-	cat $< | tee >(sha512sum) >(sha256sum) >(sha1sum) >(md5sum) | cat >>$@
+	cat $< | tee >(sha512sum >>$@) >(sha256sum >>$@) >(sha1sum >>$@) >(md5sum >>$@) >/dev/null
 
