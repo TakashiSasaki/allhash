@@ -8,6 +8,7 @@ help:
 	# make test
 install:
 	ln -sf `readlink -f filesize.sh` /usr/local/bin/filesize
+	ln -sf `readlink -f tail10MiB.sh` /usr/local/bin/tail10MiB
 
 testfiles: 20MiB.bin 20MiB+1.bin
 
